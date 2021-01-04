@@ -74,7 +74,7 @@ def update_db(db):
         else:
             if new_jobs:
                 logger.info(f"{scraper_name} - {len(new_jobs)} new jobs")
-                # collection.insert_many(new_jobs)
+                collection.insert_many(new_jobs)
 
 if __name__ == "__main__":
 
@@ -92,19 +92,19 @@ if __name__ == "__main__":
 
     update_db(db)
     
-    # # getting jobs from the last hours
-    # companies = utils.get_last_items(db)
-    # num_of_jobs = sum(len(companies[c]) for c in companies)
-    # logger.info(f"found {num_of_jobs} new jobs")
+    # getting jobs from the last hours
+    companies = utils.get_last_items(db)
+    num_of_jobs = sum(len(companies[c]) for c in companies)
+    logger.info(f"found {num_of_jobs} new jobs")
 
-    # # filter jobs that were already tweeted at the last 48 hours
-    # api = twitter.get_twitter_api(config["twitter"]["consumer_key"], 
-    #                             config["twitter"]["consumer_secret"],
-    #                             config["twitter"]["access_token"], 
-    #                             config["twitter"]["access_secret"])
-    # filtered_jobs = twitter.filter_twitter_jobs(api, companies, hours=48)
+    # filter jobs that were already tweeted at the last 48 hours
+    api = twitter.get_twitter_api(config["twitter"]["consumer_key"], 
+                                config["twitter"]["consumer_secret"],
+                                config["twitter"]["access_token"], 
+                                config["twitter"]["access_secret"])
+    filtered_jobs = twitter.filter_twitter_jobs(api, companies, hours=48)
     
-    # # tweet new jobs
-    # num_of_filtered = sum([len(filtered_jobs[company]) for company in filtered_jobs])
-    # logger.info(f"{num_of_filtered} new twitter jobs")
-    # twitter.tweet_jobs(api, filtered_jobs)
+    # tweet new jobs
+    num_of_filtered = sum([len(filtered_jobs[company]) for company in filtered_jobs])
+    logger.info(f"{num_of_filtered} new twitter jobs")
+    twitter.tweet_jobs(api, filtered_jobs)
