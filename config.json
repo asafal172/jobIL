@@ -1,0 +1,9 @@
+{
+    "logs_directory" : "path\\for\\logs\\directory",
+    "twitter" : {
+        "consumer_key" : "twitter_consumer_key",
+        "consumer_secret" : "twitter_consumer_secret",
+        "access_token" : "twitter_access_token",
+        "access_secret" : "twitter_access_secret"
+    }
+}
