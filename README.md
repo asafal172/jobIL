@@ -6,14 +6,17 @@
 
 # jobIL
 
-the software behind the twitter [@jobIL_bot] account.  
-this is a part version, as only 3 scrapers (apple, amdocs and checkpoint) are presented here.
+The software behind the twitter [@jobIL_bot] account.  
+This is a partial version, as only 3 scrapers (Apple, Amdocs and Checkpoint) are presented here.  
 
+# What It Does?
+
+Upload new job opportunities from (mostly) Israeli hi-tech companies to twitter [@jobIL_bot] account.
 
 # How It Works?
 
 <div align="center">
-  <img src="images/flowchart.png" alt="jobIL_bot" width="400"></a>
+  <img src="images/flowchart3.png" alt="jobIL_bot" width="400"></a>
 </div>
 
 
